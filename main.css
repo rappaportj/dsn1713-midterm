@@ -1,53 +1,153 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Sarala:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Sarala:wght@400;700&display=swap');
 
-/* Set custom variables here */
-
-
-
-
-
-.navbar-brand {
-  color: #F6F3ED;
+/*  CUSTOM VARIABLES */
+:root {
+  --bs-body-bg: #F6F3ED;
+  --bs-primary: #2e483a;
+  --bs-primary-rgb: 46, 72, 58;
+  --bs-light: #f6f3ed;
 }
 
+/* BASE TYPOGRAPHY */
 body {
   font-family: "Sarala", sans-serif;
+  background-color: var(--bs-body-bg);
 }
 
 h1, h2, h3 {
   font-family: "Merriweather", serif;
+  color: var(--bs-primary);
 }
 
+/*  NAVBAR  */
+.navbar-brand {
+  color: var(--bs-light);
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--bs-light);
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #d9d9d9;
+}
+
+/*  HERO SECTION  */
 #hero {
-  height: 800px;
-  background-color: #E4E6DB;
-  background-image: url(../images/hero-bg-img.png);
+  height: 650px;
+  background-image: url('images/hero-bg-img.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  display: flex;
+  align-items: flex-start;
+  text-align: center;
 }
 
-#hero .d-flex {
-  height: 800px;
+ .hero-content {
+  padding-top: 120px; 
 }
 
+#hero h1 {
+  font-size: 2.1rem; 
+  line-height: 1.3;
+  color: #000;
+
+}
+
+#hero p {
+  font-size: 1.5 rem; 
+  line-height: 1.5;
+  max-width: 700px;
+}
+
+@media (max-width: 992px) {
+  #hero .hero-content {
+    padding-top: 80px;
+  }
+  #hero h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #hero .hero-content {
+    padding-top: 60px;
+  }
+  #hero h1 {
+    font-size: 1.6rem;
+  }
+  #hero p {
+    font-size: 0.95rem;
+  }
+}
+
+
+/*  HOW IT WORKS / SECTIONS  */
+section:not(#hero):not(#cta) {
+  padding: 60px 0;
+}
+@media (min-width: 992px) {
+  section:not(#hero):not(#cta) {
+    padding: 70px 0;
+  }
+
+section h2.mb-3 {
+  margin-bottom: 2rem !important; 
+}
+
+section p.mb-5 {
+  text-align: center !important;  
+  max-width: 850px;             
+  margin: 0 auto 3rem auto !important; 
+  line-height: 1.8;            
+}
+}
+section + section {
+  border-top: 1px solid #ccc;
+}
+
+/*  CTA SECTION  */
 #cta {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/cta-bg.png');
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+   url('/images/cta-bg.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-
 #cta .d-flex {
   height: 400px;
 }
-
-section:not(#hero):not(#cta){
-  padding: 60px 0;
+#cta h2 {
+  color: var(--bs-light) !important;
 }
 
-@media(min-width: 993px){
-  section:not(#hero):not(#cta){
-    padding: 100px 0;
-  }
+/*  BUTTONS  */
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #3b5d4a;
+  border-color: #3b5d4a;
+}
+
+/*  TESTIMONIALS  */
+.bg-primary {
+  background-color: var(--bs-primary) !important;
+}
+
+section.bg-primary {
+  padding: 100px 0;
+}
+
+blockquote p {
+  color: var(--bs-light);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+
+/*  FOOTER  */
+footer span {
+  font-size: 0.9rem;
 }
